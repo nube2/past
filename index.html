@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#24204f" />
+    <meta
+      name="description"
+      content="Learn and drill the three pronunciations of regular English past tense endings."
+    />
+    <title>Past Tense Pronunciation Drill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #24204f;
+        --cream: #fffaf0;
+        --coral: #ff6b5e;
+        --lime: #d9f255;
+        --lavender: #9488d8;
+        --teal: #2cb6a5;
+        --muted: #67617c;
+        --line: rgba(36, 32, 79, 0.16);
+        --white: rgba(255, 255, 255, 0.76);
+        font-family: "DM Sans", sans-serif;
+        color: var(--ink);
+        background: var(--ink);
+        font-synthesis: none;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-width: 320px;
+        background: var(--ink);
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background-color: var(--ink);
+        background-image:
+          linear-gradient(135deg, rgba(217, 242, 85, 0.16) 0 12%, transparent 12% 100%),
+          linear-gradient(45deg, transparent 0 68%, rgba(255, 107, 94, 0.18) 68% 82%, transparent 82%),
+          linear-gradient(115deg, rgba(148, 136, 216, 0.35), rgba(36, 32, 79, 0) 48%);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      button:focus-visible {
+        outline: 3px solid var(--coral);
+        outline-offset: 4px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .app-shell {
+        width: min(calc(100% - 40px), 1040px);
+        min-height: calc(100vh - 40px);
+        min-height: calc(100dvh - 40px);
+        margin: 20px;
+        padding: 30px clamp(22px, 5vw, 64px) 24px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 34px;
+        background: rgba(255, 250, 240, 0.91);
+        box-shadow: 0 24px 80px rgba(20, 16, 56, 0.32);
+        backdrop-filter: blur(10px);
+      }
+
+      .app-shell::before {
+        content: "";
+        width: 320px;
+        aspect-ratio: 1;
+        position: absolute;
+        right: -160px;
+        top: 18%;
+        border-radius: 50%;
+        background: var(--lime);
+        opacity: 0.13;
+        pointer-events: none;
+      }
+
+      .site-header,
+      .screen,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: inherit;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        width: 40px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 13px 13px 13px 4px;
+        background: var(--ink);
+        color: var(--lime);
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        font-weight: 800;
+        transform: rotate(-4deg);
+        box-shadow: 0 6px 0 var(--lavender);
+      }
+
+      .site-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .screen {
+        flex: 1;
+        padding: clamp(38px, 7vh, 64px) 0 34px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--coral);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 10px 0 0;
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        font-size: clamp(44px, 7vw, 76px);
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+
+      h2 {
+        font-size: clamp(38px, 5.7vw, 60px);
+      }
+
+      h3 {
+        font-size: clamp(25px, 3vw, 34px);
+      }
+
+      .intro-copy {
+        max-width: 620px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .lesson-actions,
+      .drill-actions {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+      }
+
+      .primary-button,
+      .secondary-button,
+      .sound-option,
+      .text-button {
+        cursor: pointer;
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .primary-button,
+      .secondary-button {
+        min-height: 56px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 800;
+      }
+
+      .primary-button {
+        border: 0;
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 0 8px 0 var(--lavender);
+      }
+
+      .secondary-button {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--ink);
+      }
+
+      .primary-button:hover,
+      .secondary-button:hover,
+      .sound-option:hover,
+      .text-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .primary-button:active,
+      .secondary-button:active,
+      .sound-option:active,
+      .text-button:active {
+        transform: translateY(1px);
+      }
+
+      .sound-map {
+        margin-top: clamp(30px, 5vh, 46px);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .sound-card {
+        min-height: 265px;
+        padding: 22px;
+        border-radius: 26px 26px 26px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 16px 35px rgba(36, 32, 79, 0.13);
+      }
+
+      .sound-card:nth-child(1) {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .sound-card:nth-child(2) {
+        background: var(--lime);
+      }
+
+      .sound-card:nth-child(3) {
+        background: var(--coral);
+        color: #fff;
+      }
+
+      .sound-symbol {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .sound-symbol strong {
+        font-family: "Fraunces", serif;
+        font-size: 58px;
+        line-height: 0.9;
+      }
+
+      .mouth-cue {
+        min-width: 72px;
+        padding: 8px 10px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .sound-card p {
+        margin: 16px 0 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .examples {
+        margin-top: 18px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .examples span {
+        padding: 9px 11px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.24);
+        font-weight: 800;
+      }
+
+      .sound-card:nth-child(2) .examples span {
+        background: rgba(36, 32, 79, 0.08);
+      }
+
+      .shortcut {
+        margin-top: 18px;
+        padding: 18px;
+        border-left: 5px solid var(--teal);
+        border-radius: 0 20px 20px 0;
+        background: rgba(44, 182, 165, 0.12);
+        color: var(--muted);
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      .drill-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .text-button {
+        padding: 9px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stat {
+        min-width: 86px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 3px;
+        font-family: "Fraunces", serif;
+        font-size: 28px;
+        line-height: 1;
+      }
+
+      .verb-stage {
+        margin-top: clamp(28px, 6vh, 48px);
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(290px, 0.55fr);
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .verb-card {
+        min-height: 390px;
+        padding: clamp(22px, 5vw, 42px);
+        border-radius: 28px 28px 28px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 0 18px 45px rgba(36, 32, 79, 0.18);
+      }
+
+      .verb-label {
+        color: var(--lime);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .verb-word {
+        margin: 18px 0 0;
+        overflow-wrap: anywhere;
+        font-family: "Fraunces", serif;
+        font-size: clamp(58px, 11vw, 116px);
+        font-weight: 800;
+        line-height: 0.86;
+      }
+
+      .base-word {
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .choice-grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .sound-option {
+        min-height: 92px;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+      }
+
+      .sound-option strong {
+        font-family: "Fraunces", serif;
+        font-size: 40px;
+        line-height: 0.9;
+      }
+
+      .sound-option span {
+        margin-top: 7px;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .sound-option[data-choice="d"]:hover,
+      .sound-option[data-choice="d"].selected {
+        background: var(--lime);
+        color: var(--ink);
+      }
+
+      .sound-option[data-choice="t"]:hover,
+      .sound-option[data-choice="t"].selected {
+        background: var(--lavender);
+      }
+
+      .sound-option[data-choice="id"]:hover,
+      .sound-option[data-choice="id"].selected {
+        background: var(--coral);
+      }
+
+      .feedback-card {
+        min-height: 390px;
+        padding: 24px;
+        border-radius: 24px 24px 24px 8px;
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        box-shadow: 0 16px 35px rgba(36, 32, 79, 0.1);
+      }
+
+      .feedback-card h3 {
+        margin-top: 0;
+      }
+
+      .feedback-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .feedback-card.correct {
+        background: rgba(217, 242, 85, 0.86);
+      }
+
+      .feedback-card.try-again {
+        background: rgba(255, 107, 94, 0.14);
+      }
+
+      .say-box {
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .say-box span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .say-box strong {
+        display: block;
+        margin-top: 6px;
+        overflow-wrap: anywhere;
+        font-family: "Fraunces", serif;
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1;
+      }
+
+      .rule-note {
+        margin-top: auto;
+        padding-top: 18px;
+      }
+
+      .next-button {
+        width: 100%;
+        margin-top: 16px;
+      }
+
+      footer {
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      @media (max-width: 790px) {
+        .app-shell {
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100dvh;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+        }
+
+        .site-header p {
+          display: none;
+        }
+
+        .sound-map,
+        .verb-stage {
+          grid-template-columns: 1fr;
+        }
+
+        .sound-card,
+        .verb-card,
+        .feedback-card {
+          min-height: auto;
+        }
+
+        .drill-top {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 460px) {
+        .app-shell {
+          padding-inline: 18px;
+        }
+
+        .choice-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sound-option {
+          min-height: 72px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <div class="brand" aria-label="Past tense pronunciation">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <span>PAST SOUNDS</span>
+        </div>
+        <p>Regular verbs · -ed endings</p>
+      </header>
+
+      <section id="intro-screen" class="screen" aria-labelledby="page-title">
+        <p class="eyebrow">English pronunciation</p>
+        <h1 id="page-title">The three sounds of <span class="nowrap">-ed</span></h1>
+        <p class="intro-copy">
+          In regular past tense, the spelling is usually <strong>-ed</strong>,
+          but the sound changes. Learn the quick test, then drill it until your
+          ear catches it automatically.
+        </p>
+
+        <div class="lesson-actions">
+          <button id="start-lesson" class="primary-button" type="button">
+            Show me the rule
+          </button>
+          <button id="skip-lesson" class="secondary-button" type="button">
+            Skip to the game
+          </button>
+        </div>
+
+        <div class="sound-map" aria-label="The three -ed pronunciation types">
+          <article class="sound-card">
+            <div>
+              <div class="sound-symbol">
+                <strong>t</strong>
+                <span class="mouth-cue">no voice</span>
+              </div>
+              <p>
+                Use <strong>t</strong> after quiet endings like p, k, f, s, sh,
+                and ch. Your throat does not vibrate.
+              </p>
+            </div>
+            <div class="examples">
+              <span>walked = walkt</span>
+              <span>washed = washt</span>
+              <span>helped = helpt</span>
+            </div>
+          </article>
+
+          <article class="sound-card">
+            <div>
+              <div class="sound-symbol">
+                <strong>d</strong>
+                <span class="mouth-cue">voice</span>
+              </div>
+              <p>
+                Use <strong>d</strong> after vowels and voiced endings like b,
+                g, v, z, m, n, l, and r. Your throat vibrates.
+              </p>
+            </div>
+            <div class="examples">
+              <span>opened = open·d</span>
+              <span>played = playd</span>
+              <span>cleaned = cleand</span>
+            </div>
+          </article>
+
+          <article class="sound-card">
+            <div>
+              <div class="sound-symbol">
+                <strong>id</strong>
+                <span class="mouth-cue">extra beat</span>
+              </div>
+              <p>
+                Use <strong>id</strong> only after a verb that ends in a t or d
+                sound. This is the only one that adds a syllable.
+              </p>
+            </div>
+            <div class="examples">
+              <span>wanted = want·id</span>
+              <span>needed = need·id</span>
+              <span>started = start·id</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="shortcut">
+          Quick test: first ask, “Does the verb end in t or d?” If yes, say
+          <strong>id</strong>. If no, touch your throat on the final sound. If
+          it vibrates, say <strong>d</strong>. If it does not, say
+          <strong>t</strong>.
+        </p>
+      </section>
+
+      <section id="drill-screen" class="screen" aria-labelledby="drill-title" hidden>
+        <div class="drill-top">
+          <div>
+            <p class="eyebrow">Practice</p>
+            <h2 id="drill-title">Choose the ending sound</h2>
+          </div>
+          <div class="stats" aria-label="Practice score">
+            <div class="stat">
+              <span>Score</span>
+              <strong id="score">0</strong>
+            </div>
+            <div class="stat">
+              <span>Streak</span>
+              <strong id="streak">0</strong>
+            </div>
+            <div class="stat">
+              <span>Bank</span>
+              <strong id="bank-count">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="verb-stage">
+          <article class="verb-card">
+            <div>
+              <span class="verb-label">Past tense verb</span>
+              <div id="verb-word" class="verb-word">walked</div>
+              <div id="base-word" class="base-word">Base verb: walk</div>
+            </div>
+
+            <div class="choice-grid" aria-label="Pronunciation choices">
+              <button class="sound-option" data-choice="d" type="button">
+                <strong>d</strong>
+                <span>open·d</span>
+              </button>
+              <button class="sound-option" data-choice="t" type="button">
+                <strong>t</strong>
+                <span>walkt</span>
+              </button>
+              <button class="sound-option" data-choice="id" type="button">
+                <strong>id</strong>
+                <span>want·id</span>
+              </button>
+            </div>
+          </article>
+
+          <aside id="feedback-card" class="feedback-card" aria-live="polite">
+            <h3 id="feedback-title">Pick one.</h3>
+            <p id="feedback-copy">
+              Choose the sound you hear at the end of the past tense verb.
+            </p>
+            <div id="say-box" class="say-box" hidden>
+              <span>Say it like</span>
+              <strong id="say-like"></strong>
+            </div>
+            <p id="rule-note" class="rule-note">
+              Tip: the spelling is not the question. The final sound of the base
+              verb is the clue.
+            </p>
+            <button id="next-verb" class="primary-button next-button" type="button" hidden>
+              Next verb
+            </button>
+            <button id="show-lesson" class="text-button next-button" type="button">
+              Review the rule
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <footer>Built from the three -ed sounds: t, d, and id</footer>
+    </main>
+
+    <script>
+      const rawVerbs = `
+        walk|walked|t|walkt
+        work|worked|t|werkt
+        talk|talked|t|tawkt
+        ask|asked|t|askt
+        look|looked|t|lookt
+        cook|cooked|t|cookt
+        kick|kicked|t|kikt
+        check|checked|t|chekt
+        pick|picked|t|pikt
+        pack|packed|t|pakt
+        back|backed|t|bakt
+        lock|locked|t|lokt
+        knock|knocked|t|nokt
+        thank|thanked|t|thankt
+        blink|blinked|t|blinkt
+        park|parked|t|parkt
+        mark|marked|t|markt
+        help|helped|t|helpt
+        jump|jumped|t|jumpt
+        stop|stopped|t|stopt
+        drop|dropped|t|dropt
+        shop|shopped|t|shopt
+        clap|clapped|t|clapt
+        tap|tapped|t|tapt
+        wrap|wrapped|t|rapt
+        zip|zipped|t|zipt
+        hope|hoped|t|hopt
+        type|typed|t|typt
+        escape|escaped|t|escaypt
+        joke|joked|t|jokt
+        smoke|smoked|t|smokt
+        like|liked|t|likt
+        bake|baked|t|baykt
+        brake|braked|t|braykt
+        dance|danced|t|danst
+        face|faced|t|fayst
+        place|placed|t|playst
+        pass|passed|t|passt
+        miss|missed|t|mist
+        kiss|kissed|t|kist
+        guess|guessed|t|gest
+        dress|dressed|t|drest
+        cross|crossed|t|crosst
+        press|pressed|t|prest
+        promise|promised|t|promist
+        notice|noticed|t|no-tist
+        practice|practiced|t|prak-tist
+        fix|fixed|t|fikst
+        mix|mixed|t|mikst
+        box|boxed|t|bokst
+        relax|relaxed|t|ree-lakst
+        wash|washed|t|washt
+        push|pushed|t|pusht
+        finish|finished|t|finisht
+        brush|brushed|t|brusht
+        crash|crashed|t|crasht
+        wish|wished|t|wisht
+        reach|reached|t|reecht
+        watch|watched|t|wacht
+        touch|touched|t|tucht
+        search|searched|t|sercht
+        laugh|laughed|t|laft
+        cough|coughed|t|coft
+        surf|surfed|t|surft
+        brief|briefed|t|breeft
+        sniff|sniffed|t|snift
+        develop|developed|t|de-vel-upt
+        camp|camped|t|campt
+        risk|risked|t|riskt
+        mask|masked|t|maskt
+        launch|launched|t|launcht
+        crunch|crunched|t|cruncht
+        polish|polished|t|polisht
+        publish|published|t|publisht
+        announce|announced|t|a-nounst
+        reduce|reduced|t|ree-doost
+        introduce|introduced|t|in-tro-doost
+        force|forced|t|forst
+        race|raced|t|rayst
+        slice|sliced|t|slyst
+        trace|traced|t|trayst
+        increase|increased|t|in-kreest
+        decrease|decreased|t|dee-kreest
+        arrange|arranged|d|a-raynjd
+        change|changed|d|chaynjd
+        charge|charged|d|charjd
+        close|closed|d|clozd
+        raise|raised|d|rayzd
+        praise|praised|d|prayzd
+        use|used|d|yoozd
+        cause|caused|d|cawzd
+        pause|paused|d|pawzd
+        advise|advised|d|ad-vyzd
+        surprise|surprised|d|sur-pryzd
+        love|loved|d|luvd
+        live|lived|d|livd
+        move|moved|d|moovd
+        save|saved|d|sayvd
+        serve|served|d|servd
+        believe|believed|d|be-leevd
+        receive|received|d|ree-seevd
+        achieve|achieved|d|a-cheevd
+        arrive|arrived|d|a-ryvd
+        improve|improved|d|im-proovd
+        remove|removed|d|ree-moovd
+        clean|cleaned|d|cleand
+        open|opened|d|open·d
+        listen|listened|d|listen·d
+        happen|happened|d|happen·d
+        learn|learned|d|lernd
+        turn|turned|d|turnd
+        earn|earned|d|ernd
+        burn|burned|d|burnd
+        rain|rained|d|raynd
+        train|trained|d|traynd
+        explain|explained|d|ex-playnd
+        join|joined|d|joynd
+        sign|signed|d|synd
+        call|called|d|cald
+        pull|pulled|d|puld
+        fill|filled|d|fild
+        kill|killed|d|kild
+        smile|smiled|d|smild
+        mail|mailed|d|mayld
+        fail|failed|d|fayld
+        travel|traveled|d|traveld
+        cancel|canceled|d|canceld
+        play|played|d|playd
+        stay|stayed|d|stayd
+        enjoy|enjoyed|d|en-joyd
+        employ|employed|d|em-ployd
+        allow|allowed|d|a-lowd
+        follow|followed|d|followd
+        borrow|borrowed|d|borrowd
+        show|showed|d|showd
+        snow|snowed|d|snowd
+        answer|answered|d|answerd
+        offer|offered|d|offerd
+        cover|covered|d|coverd
+        deliver|delivered|d|deliverd
+        remember|remembered|d|rememberd
+        prepare|prepared|d|pre-paird
+        share|shared|d|shaird
+        care|cared|d|caird
+        compare|compared|d|com-paird
+        repair|repaired|d|ree-paird
+        color|colored|d|colord
+        order|ordered|d|orderd
+        wonder|wondered|d|wonderd
+        enter|entered|d|enterd
+        discover|discovered|d|dis-coverd
+        gather|gathered|d|gatherd
+        bother|bothered|d|botherd
+        name|named|d|named
+        blame|blamed|d|blaymd
+        frame|framed|d|fraymd
+        claim|claimed|d|claymd
+        dream|dreamed|d|dreemd
+        seem|seemed|d|seemd
+        warm|warmed|d|warmd
+        perform|performed|d|per-formd
+        plan|planned|d|pland
+        scan|scanned|d|scand
+        ban|banned|d|band
+        rub|rubbed|d|rubd
+        grab|grabbed|d|grabd
+        rob|robbed|d|robd
+        beg|begged|d|begd
+        drag|dragged|d|dragd
+        hug|hugged|d|hugd
+        log|logged|d|logd
+        judge|judged|d|judjd
+        damage|damaged|d|damijd
+        manage|managed|d|manijd
+        imagine|imagined|d|imajind
+        examine|examined|d|eg-zamind
+        continue|continued|d|con-tin-yood
+        argue|argued|d|ar-gyood
+        glue|glued|d|glood
+        ski|skied|d|skeed
+        copy|copied|d|cop-eed
+        study|studied|d|stud-eed
+        carry|carried|d|car-eed
+        try|tried|d|tryd
+        cry|cried|d|cryd
+        dry|dried|d|dryd
+        fry|fried|d|fryd
+        worry|worried|d|wor-eed
+        hurry|hurried|d|hur-eed
+        accept|accepted|id|accept·id
+        act|acted|id|act·id
+        add|added|id|add·id
+        admit|admitted|id|admit·id
+        afford|afforded|id|afford·id
+        affect|affected|id|affect·id
+        attend|attended|id|attend·id
+        award|awarded|id|award·id
+        collect|collected|id|collect·id
+        complete|completed|id|complete·id
+        connect|connected|id|connect·id
+        count|counted|id|count·id
+        create|created|id|create·id
+        decide|decided|id|decide·id
+        decorate|decorated|id|decorate·id
+        defend|defended|id|defend·id
+        delete|deleted|id|delete·id
+        divide|divided|id|divide·id
+        end|ended|id|end·id
+        expect|expected|id|expect·id
+        export|exported|id|export·id
+        fold|folded|id|fold·id
+        guide|guided|id|guide·id
+        hate|hated|id|hate·id
+        include|included|id|include·id
+        invent|invented|id|invent·id
+        invite|invited|id|invite·id
+        land|landed|id|land·id
+        last|lasted|id|last·id
+        lift|lifted|id|lift·id
+        proceed|proceeded|id|proceed·id
+        paint|painted|id|paint·id
+        plant|planted|id|plant·id
+        point|pointed|id|point·id
+        print|printed|id|print·id
+        protect|protected|id|protect·id
+        rent|rented|id|rent·id
+        repeat|repeated|id|repeat·id
+        report|reported|id|report·id
+        rest|rested|id|rest·id
+        start|started|id|start·id
+        test|tested|id|test·id
+        treat|treated|id|treat·id
+        visit|visited|id|visit·id
+        wait|waited|id|wait·id
+        want|wanted|id|want·id
+        waste|wasted|id|waste·id
+        vote|voted|id|vote·id
+        update|updated|id|update·id
+        upload|uploaded|id|upload·id
+        download|downloaded|id|download·id
+        record|recorded|id|record·id
+        reward|rewarded|id|reward·id
+        regard|regarded|id|regard·id
+        remind|reminded|id|remind·id
+        respond|responded|id|respond·id
+        pretend|pretended|id|pretend·id
+        depend|depended|id|depend·id
+        expand|expanded|id|expand·id
+        demand|demanded|id|demand·id
+        sound|sounded|id|sound·id
+        guard|guarded|id|guard·id
+        load|loaded|id|load·id
+        avoid|avoided|id|avoid·id
+        edit|edited|id|edit·id
+        credit|credited|id|credit·id
+        limit|limited|id|limit·id
+        permit|permitted|id|permit·id
+        submit|submitted|id|submit·id
+        fit|fitted|id|fit·id
+        benefit|benefited|id|benefit·id
+        shout|shouted|id|shout·id
+        chat|chatted|id|chat·id
+        knit|knitted|id|knit·id
+        float|floated|id|float·id
+        note|noted|id|note·id
+        quote|quoted|id|quote·id
+        rate|rated|id|rate·id
+        skate|skated|id|skate·id
+        taste|tasted|id|taste·id
+        heat|heated|id|heat·id
+        cheat|cheated|id|cheat·id
+        greet|greeted|id|greet·id
+        need|needed|id|need·id
+        fade|faded|id|fade·id
+        trade|traded|id|trade·id
+        grade|graded|id|grade·id
+        raid|raided|id|raid·id
+        collide|collided|id|collide·id
+        shade|shaded|id|shade·id
+        head|headed|id|head·id
+        nod|nodded|id|nod·id
+        pad|padded|id|pad·id
+        applaud|applauded|id|applaud·id
+        board|boarded|id|board·id
+        chart|charted|id|chart·id
+        sort|sorted|id|sort·id
+        melt|melted|id|melt·id
+        request|requested|id|request·id
+        select|selected|id|select·id
+        alert|alerted|id|alert·id
+      `;
+
+      const verbs = rawVerbs
+        .trim()
+        .split("\n")
+        .map((line) => line.trim().split("|"))
+        .map(([base, past, sound, say]) => ({ base, past, sound, say }));
+
+      const rules = {
+        t: "No extra syllable. The base verb ends with a quiet sound, so -ed sounds like t.",
+        d: "No extra syllable. The base verb ends with a voiced sound, so -ed sounds like d.",
+        id: "Extra syllable. The base verb ends in t or d, so -ed sounds like id.",
+      };
+
+      const state = {
+        current: null,
+        previous: null,
+        score: 0,
+        streak: 0,
+        answered: false,
+      };
+
+      const elements = {
+        intro: document.querySelector("#intro-screen"),
+        drill: document.querySelector("#drill-screen"),
+        startLesson: document.querySelector("#start-lesson"),
+        skipLesson: document.querySelector("#skip-lesson"),
+        showLesson: document.querySelector("#show-lesson"),
+        verbWord: document.querySelector("#verb-word"),
+        baseWord: document.querySelector("#base-word"),
+        score: document.querySelector("#score"),
+        streak: document.querySelector("#streak"),
+        bankCount: document.querySelector("#bank-count"),
+        options: document.querySelectorAll(".sound-option"),
+        feedbackCard: document.querySelector("#feedback-card"),
+        feedbackTitle: document.querySelector("#feedback-title"),
+        feedbackCopy: document.querySelector("#feedback-copy"),
+        sayBox: document.querySelector("#say-box"),
+        sayLike: document.querySelector("#say-like"),
+        ruleNote: document.querySelector("#rule-note"),
+        nextVerb: document.querySelector("#next-verb"),
+      };
+
+      function randomIndex(length) {
+        if (window.crypto?.getRandomValues) {
+          const values = new Uint32Array(1);
+          window.crypto.getRandomValues(values);
+          return values[0] % length;
+        }
+
+        return Math.floor(Math.random() * length);
+      }
+
+      function pickVerb() {
+        let next;
+
+        do {
+          next = verbs[randomIndex(verbs.length)];
+        } while (verbs.length > 1 && next.past === state.previous?.past);
+
+        state.previous = next;
+        state.current = next;
+        state.answered = false;
+        renderVerb();
+      }
+
+      function renderVerb() {
+        elements.verbWord.textContent = state.current.past;
+        elements.baseWord.textContent = `Base verb: ${state.current.base}`;
+        elements.options.forEach((button) => {
+          button.disabled = false;
+          button.classList.remove("selected");
+        });
+        elements.feedbackCard.className = "feedback-card";
+        elements.feedbackTitle.textContent = "Pick one.";
+        elements.feedbackCopy.textContent =
+          "Choose the sound you hear at the end of the past tense verb.";
+        elements.sayBox.hidden = true;
+        elements.sayLike.textContent = "";
+        elements.ruleNote.textContent =
+          "Tip: the spelling is not the question. The final sound of the base verb is the clue.";
+        elements.nextVerb.hidden = true;
+      }
+
+      function updateStats() {
+        elements.score.textContent = String(state.score);
+        elements.streak.textContent = String(state.streak);
+        elements.bankCount.textContent = String(verbs.length);
+      }
+
+      function showDrill() {
+        elements.intro.hidden = true;
+        elements.drill.hidden = false;
+        pickVerb();
+        elements.drill.focus({ preventScroll: true });
+      }
+
+      function showLesson() {
+        elements.drill.hidden = true;
+        elements.intro.hidden = false;
+        elements.startLesson.focus();
+      }
+
+      function answer(choice, button) {
+        if (state.answered) return;
+
+        button.classList.add("selected");
+
+        if (choice !== state.current.sound) {
+          state.streak = 0;
+          updateStats();
+          elements.feedbackCard.className = "feedback-card try-again";
+          elements.feedbackTitle.textContent = "Try again.";
+          elements.feedbackCopy.textContent =
+            "That is not the ending sound for this verb. Use the quick test and choose another option.";
+          elements.ruleNote.textContent =
+            "Listen to the final sound of the base verb, then decide whether the -ed ending is t, d, or id.";
+          return;
+        }
+
+        state.answered = true;
+        state.score += 1;
+        state.streak += 1;
+        updateStats();
+        elements.options.forEach((option) => {
+          option.disabled = true;
+        });
+        elements.feedbackCard.className = "feedback-card correct";
+        elements.feedbackTitle.textContent = "Correct.";
+        elements.feedbackCopy.textContent = `${state.current.past} ends with the ${state.current.sound} sound.`;
+        elements.sayLike.textContent = state.current.say;
+        elements.sayBox.hidden = false;
+        elements.ruleNote.textContent = rules[state.current.sound];
+        elements.nextVerb.hidden = false;
+        elements.nextVerb.focus();
+      }
+
+      elements.startLesson.addEventListener("click", showDrill);
+      elements.skipLesson.addEventListener("click", showDrill);
+      elements.showLesson.addEventListener("click", showLesson);
+      elements.nextVerb.addEventListener("click", pickVerb);
+      elements.options.forEach((button) => {
+        button.addEventListener("click", () => answer(button.dataset.choice, button));
+      });
+
+      updateStats();
+    </script>
+  </body>
+</html>
